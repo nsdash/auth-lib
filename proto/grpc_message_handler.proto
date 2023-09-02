@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+option go_package = "./proto";
+
+service GrpcMessageHandler {
+  rpc Register (RegisterRequest) returns (RegisterResponse) {}
+  rpc Auth (AuthRequest) returns (AuthResponse) {}
+  rpc Refresh (RefreshRequest) returns (RefreshResponse) {}
+  rpc CheckToken (CheckTokenRequest) returns (CheckTokenResponse) {}
+}
+
+message AuthRequest {
+  string login = 1;
+  string password = 2;
+}
+
+message AuthResponse {
+  string accessToken = 1;
+  string refreshToken = 2;
+  string accessTokenExpiresAt = 3;
+  string refreshTokenExpiresAt = 4;
+}
+
+message RefreshRequest {
+  string refreshToken = 1;
+}
+
+message RefreshResponse {
+  string accessToken = 1;
+  string refreshToken = 2;
+  string accessTokenExpiresAt = 3;
+  string refreshTokenExpiresAt = 4;
+}
+
+message CheckTokenRequest {
+  string accessToken = 1;
+}
+
+message CheckTokenResponse {
+  int32 userId = 1;
+}
+
+message RegisterRequest {
+  string login = 1;
+  string password = 2;
+  int32 userId = 3;
+}
+
+message RegisterResponse {
+
+}

@@ -10,7 +10,11 @@ AUTH_SERVICE_PORT
 
 2. 
 ```
-factory := NewHandlerFactory()
+factory, error := NewHandlerFactory()
+
+if error != nill {
+//
+}
 
 handler := factory.createCheckTokenQueryHandler()
 

@@ -18,7 +18,7 @@ func NewHandlerFactory() HandlerFactory {
 	}
 }
 
-func (f HandlerFactory) createCheckTokenQueryHandler() (*query.CheckTokenQueryHandler, error) {
+func (f HandlerFactory) CreateCheckTokenQueryHandler() (*query.CheckTokenQueryHandler, error) {
 	conn, err := grpc.Dial(
 		fmt.Sprintf("%s:%s", f.config.Get("AUTH_SERVICE_HOST"), f.config.Get("AUTH_SERVICE_PORT")),
 		grpc.WithTransportCredentials(insecure.NewCredentials()),

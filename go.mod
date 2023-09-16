@@ -4,14 +4,12 @@ go 1.21.1
 
 require (
 	github.com/golang/protobuf v1.5.3
-	github.com/nsdash/go-error-handler v1.0.0
+	github.com/nsdash/go-error-handler v1.0.1
+	github.com/nsdash/go-error-lib v1.0.0
 	google.golang.org/grpc v1.58.1
 )
 
-require (
-	github.com/joho/godotenv v1.5.1 // indirect
-	github.com/nsdash/go-error-lib v1.0.0 // indirect
-)
+require github.com/joho/godotenv v1.5.1 // indirect
 
 require (
 	github.com/nsdash/config-lib v0.0.0-20230220190407-8c234eb12dfe
